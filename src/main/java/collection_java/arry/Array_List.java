@@ -2,7 +2,7 @@ package collection_java.arry;
 
 import java.util.*;
 
-import static collection_java.arry.set.SetEx.NUMBER;
+import static collection_java.set.SetEx.NUMBER;
 
 public class Array_List {
     public static void checkArray(){
