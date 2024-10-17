@@ -1,4 +1,4 @@
-package map;
+package collection_java.arry.map;
 
 import student.Student;
 
@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-import static set.SetEx.NUMBER;
+import static collection_java.arry.set.SetEx.NUMBER;
 
 public class MapEx {
 

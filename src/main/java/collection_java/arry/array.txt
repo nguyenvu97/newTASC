@@ -1,0 +1,2 @@
+Array : tao mang kich thuc duoc xac dinh va ko the thay doi dc mang vi no dc cao phat tinh , tat ca du lieu phai cung kieu du lieu truy cap nhanh  với thời gian truy cập là O(1).
+ phuong thuc : Phương thức toString() , deepToString neu la mang da chieu , sort

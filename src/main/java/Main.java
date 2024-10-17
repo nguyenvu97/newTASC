@@ -1,11 +1,6 @@
 
 
-import static arry.Array.array;
-import static arry.Array_List.checkArray;
-import static map.MapEx.hashMap;
-import static queue.DequeEx.check_deque;
-import static queue.QueueEx.check_queue;
-import static set.SetEx.hashSet;
+import static collection_java.arry.Array_List.checkArray;
 
 
 public class Main {

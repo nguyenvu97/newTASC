@@ -1,0 +1,25 @@
+SetInterface : Set không chứa các phần tử trùng nhau , khi đạt đến giơi han thì tự dộng x2
+
+Các lớp cài đặt (implements)Set interface là HashSet, LinkedSet and TreeSet
+
+
+HashSet không đảm bảo thứ tự các entry được thêm vào , co hiêu suât tốt , tốn it tai nguyen hon so vs LinkedSet
+LinkedSet đảm bảo thứ tự các entry được thêm vào , có hiệu suât tốt hon TreeSet  nhung tôn tai nguyên hon HashSet vi phai luu trữ nodes
+
+TreeSet duy trình thứ tự các phần tử dựa vào bộ so sánh Comparator , thuộc loại dư liệu ko tuyến tinh , tốn tại nguyên hơn HashSet , LinkedSet  nhưng dc sắp xết theo 1 trận tự nhât đinh
+Các phương thức của Set interface :
+
+int size() : số lượng các phần từ trong set
+boolean isEmpty() : check trogn set co phần tử hay ko nếu tra về true co nghi la ko co va ngược lại
+boolean contains(Object o) : check co gia trị trong set hay ko
+Iterator<E> iterator() : 	Trả về một iterator.
+Object[] toArray() : chuyển đôi Collection thanh mảng Array
+boolean add(E e) : them data vao Collection set
+boolean remove(Object o) : xoa gia trị vlaue trogn set nếu tra về true
+boolean containsAll(Collection<?> c) : so sanh giua 2 Collection set vs nhau neu tat ca phan tu trong 2 set trugn nhau  ve true , nguoc lai
+boolean addAll(Collection<? extends E> c); add tat cac phan tu từ 1 Collection set sang 1 Collection set khac
+boolean retainAll(Collection<?> c) : chi lay gia tri trung lap trong 2 set con nhung gia tri ko bi trung lap se bi xoa di
+boolean removeAll(Collection<?> c): xoa  phan tu trong set
+void clear() : xoa het tat ca phan tu trong Collection set
+boolean equals(Object o) : so sanh gia tri trong Collection set neu tra ve tr co nghi la tồn tại, ngược lại
+int hashCode() trả về gia tri cua cac phần tử nhưng da dc hash rồi

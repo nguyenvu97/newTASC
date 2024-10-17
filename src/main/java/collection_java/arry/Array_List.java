@@ -1,8 +1,8 @@
-package arry;
+package collection_java.arry;
 
 import java.util.*;
 
-import static set.SetEx.NUMBER;
+import static collection_java.arry.set.SetEx.NUMBER;
 
 public class Array_List {
     public static void checkArray(){

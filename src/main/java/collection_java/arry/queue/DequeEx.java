@@ -1,11 +1,10 @@
-package queue;
+package collection_java.arry.queue;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 
-import static set.SetEx.NUMBER;
+import static collection_java.arry.set.SetEx.NUMBER;
 
 public class DequeEx {
 

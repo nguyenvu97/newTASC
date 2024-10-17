@@ -1,0 +1,38 @@
+map : đc lưu trữ dưới dang key ,value , key la duy nhất , key nhan gia trị  null , không chứa các key trùng lặp , key ma trung lap thi gia tri value sau se de lan gatri value co key trung
+Các lớp cài đặt (implements) Map interface là HashMap, LinkedHashMap and TreeMap
+vidu : map nhan gia tri null
+  Map<String,String> map = new HashMap<>();
+    map.put(null,null);
+    map.put("2", "value2");
+        System.out.println(map);
+
+HashMap không đảm bảo thứ tự các entry được thêm vào , co hiêu suât tốt , tốn it tai nguyen hon so vs LinkedHashMap
+LinkedHashMap đảm bảo thứ tự các entry được thêm vào , có hiệu suât tốt hon treemap  nhung tôn tai nguyên hon hashmap vi phai luu trữ nodes
+
+TreeMap duy trình thứ tự các phần tử dựa vào bộ so sánh Comparator , key ko thể null , thuộc loại dư liệu ko tuyến tinh , tốn tại nguyên hơn HashMap , LinkedHashMap  nhưng dc sắp xết theo 1 trận tự nhât đinh
+
+sức chú cua map la 2^4 khi dan gai tri gioi han no se tu động x2
+
+các func trogn Map_Interface :
+
+int size() : trả về số lượng cặp key/ value
+
+boolean isEmpty() : nếu tra về true co nghi la rỗng còn ko la co data
+
+boolean containsKey(Object key); : neu la true thi trong map co key đó
+
+boolean containsValue(Object value); tra về tru neus trong map đó co value
+
+V get(Object key) : get value dua vao key
+V put(K key, V value) : add cap key/value vao map
+
+V remove(Object key) : xóa cập gia trị key/vlaue dựa theo key
+void putAll(Map<? extends K, ? extends V> m) : luu trữ 1 map khac vao map hien tai
+
+void clear() : xoa het cặp key.value trogn map
+
+Set<K> keySet() : lấy tất cả gai trị key trong map
+
+Collection values( ) : lấy tất cả gai trị value trong map
+
+Set<Map.Entry<K, V>> entrySet(): getAll các cặp key/value trong map

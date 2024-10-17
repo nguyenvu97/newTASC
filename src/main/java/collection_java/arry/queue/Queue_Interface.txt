@@ -1,0 +1,42 @@
+1)Queue_Interface : the cớ chế  fifo , cho phap nhận gia tri null
+  a) class triển khai : LinkedList , ArrayDeque
+
+  b)môt số phương thưc cua Queue_interface
+    offer(E e): Thêm phần tử vào queue.
+    poll(): Lấy và loại bỏ phần tử đâu tiên của queue.
+    peek(): Lấy nhưng không loại bỏ phần tử đầu tiên.
+    remove(): xoa bỏ phần tử đầu tiên
+    element(): lay phân tu đâu tiền nếu phan tu đầu tiên la null thi se tra ra NullPointerException
+    add(): them phần tử vao
+
+2)Deque Interface : la collection dc hộ trọ thêm va xoa ở cả hai đầu ,cho phap nhận gia tri null
+Deque là từ viết tắt của double ended queue.
+Deque Interface cung cấp các phương thức cần thiết để bạn có thể chèn, truy xuất và loại bỏ các phần tử khỏi cả hai đầu.
+ +) public interface Deque<E> extends Queue<E>
+   a) class triển khai : LinkedList , ArrayDeque
+     vừa co phương thức cua stack cú co phương thuc cua Queue
+
+    b)môt số phương thưc cua Queue_interface
+    // phươc thưc cua Queue
+    offer(E e): Thêm phần tử vào queue.
+    poll(): Lấy và loại bỏ phần tử đâu tiên của queue.
+    peek(): Lấy nhưng không loại bỏ phần tử đầu tiên.
+    remove(): xoa bỏ phần tử đầu tiên
+    element(): lay phân tu đâu tiền nếu phan tu đầu tiên la null thi se tra ra NullPointerException
+    add(): them phần tử vao
+    phươc thưc Deque
+	  addFirst(): add vao đâu mảng
+	  peekFirst() : truy xuất phần tử đâu tiên
+    removeFirst() :truy xuất phần tử đâu tiên vs xoa di
+    addlast() : them phần tử vao cuối mảng
+    OfferLast() : them phần tử vao cuối mảng
+    getFirst(): gióng element()
+    peekFirst() :  peek()
+    removeFirst(): giông remove()
+	    pollFirst()  : giống poll();
+pollLast(): xoa phân tu cuối cung
+    // phuong thức cua stack
+    	push(): add vao đâu mảng
+	    peek(): truy xuất phần tử đâu tiên
+      pop():truy xuất phần tử đâu tiên vs xoa di
+ 

@@ -1,4 +1,4 @@
-package set;
+package collection_java.arry.set;
 
 import student.Student;
 
