@@ -1,0 +1,110 @@
+Throw : tụ doọng xư ly trogn func do luon ,
+
+    vidu:
+    public static void main(String[] args) {
+        try {
+            int tuoi = nhapTuoiNhanVien();
+            System.out.println("Tuổi đã nhập: " + tuoi);
+        } catch (InputMismatchException e) {
+            System.out.println("Tuổi nhập vào chưa hợp lệ. Lỗi: " + e.toString());
+        }
+    }
+
+Throws :la dc xư lý ở ở nơi khac khi goi func , no se day het func goi no vao class set
+
+    vidu :
+    public class TestEx {
+        public  static void read_flies() throws FileNotFoundException {
+            FileReader file = new FileReader("abc/sda");
+        }
+        public static void show_flies() throws FileNotFoundException {
+            read_flies();
+        }
+}
+
+public static void main(String[] args) {
+        try {
+            TestEx.show_flies();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+Thế nào là checked và unchecked exception :
+    +) checked : là những ngoại lện dc phát hiện trong qua trinh compile time , va dc chình biên dich bão lôi
+     FileReader file = new FileReader("abc/sda");
+    +) unchecked : ko đươợc phát tiện trong compile time  hay run time mà chi dc phát hiện khi goi phương thưc đó
+        vidu : int a=10, b=0;
+                int c=a/b;
+               System.out.println(c);
+
+try catch , try with resource : try with resource dung cho files, kết nối đến db hay redis ... tránh việc rò rỉ tài nguyên khi việc kêết nối ko thành công
+        vidu :
+         public  static void read_flies() {
+                            try (FileReader file = new FileReader("abc/sda")) {
+                                int character;
+                                // Đọc từng ký tự từ tệp
+                                while ((character = file.read()) != -1) {
+                                    System.out.print((char) character);
+                                }
+
+                            } catch (FileNotFoundException fileNotFoundException) {
+                                fileNotFoundException.printStackTrace();
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
+
+ try catch : là cấu truc xu lý ngoại lê, nó cho phép cố gắng thực hiện khối lenh ,nếu có nối se bắt lỗi để xử lý
+
+             try  {
+                        FileReader file = new FileReader("abc/sda")
+                        int character;
+                        // Đọc từng ký tự từ tệp
+                        while ((character = file.read()) != -1) {
+                            System.out.print((char) character);
+                        }
+
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        fileNotFoundException.printStackTrace();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+
+custom exception :
+            public class Notfound extends Exception {
+                    int status_code;
+
+
+                public Notfound( String message,int status_code) {
+                    super(message);
+                    this.status_code = status_code;
+                }
+
+            }
+
+
+            public void read_flies() throws Notfound {
+                    try (FileReader file = new FileReader("abc/sda")) {
+                        int character;
+                        // Đọc từng ký tự từ tệp
+                        while ((character = file.read()) != -1) {
+                            System.out.print((char) character);
+                        }
+
+                    } catch (FileNotFoundException fileNotFoundException) {
+                        throw new Notfound(fileNotFoundException.getMessage(),400);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                public void show(){
+                    try {
+                        read_flies();
+                    } catch (Notfound e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+

@@ -1,0 +1,15 @@
++) String java là kểu du lieu object dc luu trong string pool dc lứu trong bộ nhớ heap
++ có 2 cánh để taọ 1 biến String :
+1) String abc = "String";
+2) String abc = new String("String")
+
++) String pool : khi tao 1 bien string no se dc luu trogn string pool vs gia tri value neu gia tri bien lan 2 giogn lan 1 thi no se tro den gia tri value
+vidu :  String abc = "String";
+String abcd = "String"; co nghi la abc vs abcd de tro len gia tri value trogn string pool ma ko can phai tao them , giải tai nguyen
+
++)Làm sao để so sánh hai chuỗi trong java : so sánh 2 chuôí dung equals no so snah gia tri value, == cũng co thế so sanhd c nếu
+ko khoi tao new String("String") thi no se trỏ vao cung 1 bộ nhớ trong string pool
+
+
+
+

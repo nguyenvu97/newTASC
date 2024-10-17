@@ -1,0 +1,12 @@
+ cấp phát tĩnh và cấp phát động :
+  +)cap phap tinh : thời gian bien dịch,kich thuoc ko thay doi , dc luu trogn set,
+ +)cấp phát động : thoi gian chay , kich thuoc thay doi , dc luu trong heap
+
+ vidu : int [] arry = new int [5]; // cap phap tĩnh
+             List<String> stringList = new ArrayList<>(); // cấp phát đông
+
+
+ Phân biệt bộ nhớ heap và bộ nhớ set ?
+
+    set : luu cac bien cuc bô int a = 5  ,va cac tham so cua phuong thuc, bộ nhớ set  la cố dịnh,và sử dụng LIFO.
+    heap : bộ nhớ co thể mo rong ,la noi luu tru doi tuong java bang tu khoa new

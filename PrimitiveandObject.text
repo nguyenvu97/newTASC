@@ -1,0 +1,26 @@
+Kiểu dư liệu nguyên thủy la kiểu liệu : int , double, long ..., kiểu dữ liệu tốn ít Tai nguyên hon so vs kiểu object vs ko nhận gia tri null  va dc lưu trong set
+kiểu dư liệu object là kiểu du liệu :Integer.Long, Double , nhận gia trị null và dc khỏi tạo trong heap , co thể chuyển dổi tu kiểu nguyen thủy sang kiểu object bang Autoboxing ,ngược lai la Unboxing
+Autoboxing : chuyện tu kiểu du liệu tham  tri sang thanh kiểu tham chiêu
+
+int data = 5;
+		Integer obj1 = Integer.valueOf(data);
+		System.out.println(obj1);
+
+
+
+Unboxing : thi tù kiểu tham chiêu sang  thanh tham tri
+
+Integer obj1 = Integer.valueOf(data);
+int number = obj1;
+System.out.println(number);
+Khi muốn chuyển doi 2 kiểu du liệu thi phai 2 loài du liệu tham chiêu dc cho nhau vi du int => Integer con int != Sort thi phải ép kiểu
+
+vidu :
+
+int data = 5; // so nguyen thuy
+
+Integer integer = Integer.valueOf(5);  // khoi tao gia tri kieu object
+
+Có thể so sánh hai kiểu dữ liệu này với nhau không? có vi chung da Autoboxing chuyen doi dua 2 kieu du lieu roi
+só nguyen thuy thi  so sanh == ; == thi so snah dia tri bo nho + gia tri value
+con so kieu object thi dung equals ; thi so sanh gia tri value

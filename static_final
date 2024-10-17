@@ -1,0 +1,121 @@
+1) static : thuộc ve lop cu ko thuc ve doi tuong , la dc luu tru trong heap va dc nap 1 lan duy nhat khi chay truogn trinh  ,
+giam tai nguyen vi ko phai khoi tao nhieu lan , va chi co static moi co the goi dc nhau con non static thi ko the goi truc tiep
+vao phuong thuc static , tao static la cac bien tinh va se dc Compile-Time , non static runtime moi khoi tao len ko the goi truc tiep ,
+ko the ghi ko th ghi de
++ )có 5 cánh dùng  :
+    a) bien static
+    b) phương thưc static
+    c) static block (khôi static)
+    d) class static
+    e) import static
+ a )bien static  : co thể gỏi bất khi đâu trong chưng trinh
+ public class Test {
+     public static String data = "String";
+ }
+
+ public static void main(String[] args) {
+        Test.data
+
+     }
+ ,final  thi no la 1 hằng số
+
+ vi dụ :
+ public static final  String ABC= "static";
+
+ b) phương thưc static : co thể gỏi bất khi đâu trong chưng trinh
+package org.tasc.booking.vnpay_Service.test;
+
+public class Test {
+    public static void display(){
+        System.out.println("static");
+    }
+}
+ public static void main(String[] args) {
+        Test.display();
+
+     }
+ c) static block : khơi tao j gia tri co canh bien static
+ package org.tasc.booking.vnpay_Service.test;
+
+ public class Test1 {
+     public  static  int abc ;
+      static {
+         Test1.abc = 10;
+     }
+   public static void display(){
+         System.out.println("static");
+     }
+ }
+d) class static : dc lam trong 1 class binh thuong
+    public class Test1 {
+        public  static  int abc ;
+         static {
+        Test1.abc = 10;
+         }
+    public static void display(){
+        System.out.println("static");
+        }
+    public  static class  Abc {
+         public int number2;
+
+        public Abc(int number2) {
+            this.number2 = number2;
+        }
+
+        public static int number = 5;
+         public static void display(){
+             System.out.println( "number " + Abc.number);
+         }
+    }
+ public static void main(String[] args) {
+        Test1.Abc.display();
+     }
+}
+
+ e) import static : co the goi ma ko can khai bao lop
+
+   public  static  String user_name  = "user_name";
+
+ import static org.tasc.booking.vnpay_Service.test.Test1.user_name;
+
+   public static void main(String[] args) {
+
+          System.out.println("user name " + user_name);
+      }
+
+2) final : class final thi ko the ke thua , neu la phuogn thuc final thi ko the ghi de dc , Biến final thi ko the thay doi gai tri ,
+ Biến final thường được sử dụng trong lập trình đa luồng (multithreading) để đảm bảo tính nhất quán của dữ liệu.
+ Bởi vì các biến final không thể thay đổi, điều này giúp tránh những vấn đề liên quan đến việc thay đổi giá trị trong các luồng khác nhau
+
++) class final:
+ public final class Test2 {
+    public String a ;
+ }
+ Cannot inherit from final se bao loi
+
+
++)phuong thuc final :
+public  class Test2 {
+    public String a ;
+    public final void display (){
+        System.out.println("final methord");
+    }
+}
+public class Test1 extends Test2{
+    public  static  String user_name  = "user_name";
+
+  public  void display(){
+        System.out.println("static");
+    }
+
+bao loi : display()' cannot override 'display()' in 'org. tasc. booking. vnpay_Service. test. Test2'; overridden method is final
+
+
++) bien final :
+  public final String a = "bababa";
+    public final void display (){
+        System.out.println("final methord");
+        a = "aahaha";
+    }
+    Cannot assign a value to final variable 'a'
+

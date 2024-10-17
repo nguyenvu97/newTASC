@@ -1,0 +1,55 @@
+1)oop: co 4 tinh chat quan torn
+ +) tinh da hinh :  là khả năng của một phương thức để thực hiện nhiều hành động khác nhau tùy thuộc vào đối tượng mà nó đang hoạt động
+ +) tinh truu tuong là an di nhung chi tiet  ko can thiets qua doi tuong chi tâp trung vao điểm quan trong cua dối tượng
+ +) tinh ke thua  : java co 3 loai ke thua đơn kế thừa  class a kế thừ class b ,
+   kế thừa phân câp  class b ke thua class d class ake thua class b,
+    kê thừa thứ bâc  claas a ke thua class b class c ke thua class b
+ +) tinh dong goi la an bên trong 1 đối tượng la dc gọi  bằng get vs set.
+  Điều này giúp bảo vệ dữ liệu và kiểm soát cách thức mà dữ liệu được truy cập và thay đổi.
+2) Access modifier :  public , private ,protected,Default
+ public: dc goi  bất kỳ đâu
+ private: chi dc goi trong class
+ protected: goi trong package, neu package a co class a1 va co 1 phuong thuc protected void display(){}  trong  package b c class b1 ke thuc class a thi b van co the goi phuogn thuc display() cua class a1
+ Default:goi trong package
+3) Abstract : la class gom nhung phuoc thuc co body va nhugn thuoc thuc ko body
+    Interface : la phuong thuc ko co body la co the da ke thua dc
+
+   Nếu 2 interface hoặc 1 abstract và 1 interface có 1 function cùng tên : 2 interface có cung 1 func thi khi 1 class implements 2 interface hi ko ko bi bao loi
+    vi don gian interface chi la lop truu tuong len 2 phuoc thuc ma giông nhau se ko anh huong j ca
+
+    vidu : public interface abc  extends  abcd{
+               void abc1();
+           }
+           public interface abcd {
+               void abc1();
+           }
+public  abstract class ges {
+
+
+    public void abc1(){
+        System.out.println("babbsa");
+    }
+}
+ public static void main(String[] args) {
+
+        Test1 test1 = new Test1();
+        test1.abc1();
+    }
+
+4)
++)Overriding : khi ke thua 1 class hoac abstract class thi class con co the ghi de các phuong thuc cua class cha , class con ko the ghi đè phuogn thuc final , private , static
+ +) Overloading : cho phep 1 lơp co nhieu phuong thuc cung ten cung kểu tra vè nhugn khac tham so
+ vidu : public  void display (){
+            }
+            public void display(String a){
+
+            }
+            public  void display (boolean a){
+
+            }
+            public void display(double a){
+
+            }
+ Một function có access modifier là private or static có thể overriding : không neu private thi no chi gioi han trong class len no ko the dc overriding,
+ con static don gian no la lop tinh ma theo co che binding dong cua run time ma static  được gán tĩnh trong thời gian biên dịch
+Phân biệt hai từ khóa This và Super : this la instance cua lop con con super la instance cua lop cha
