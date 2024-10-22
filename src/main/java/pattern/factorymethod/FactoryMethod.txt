@@ -1,0 +1,20 @@
+Factory Method :  cung cấp một interface,
+phương thức trong việc tạo nên một đối tượng (object) trong class.
+Nhưng để cho class con kế thừa của nó có thể ghi đè để chỉ rõ đối tượng (object) nào sẽ được tạo.
+Factory method giao việc khởi tao một đối tượng (object) cụ thế cho lớp con (subclass)
+
+Mục đích :
+    +) giảm sự phụ thuộc, dễ dàng mở rộng
+    +) Giảm khả năng gây lỗi compile
+    +) Che giấu quá trình xử lý logic của phương thức khởi tạo
+    +) Tạo ra một cách khởi tạo object mới thông qua một interface chung
+Ưu & nhược điểm :
+    - che giấu dc logic của phương thức khởi tạo
+    - Hạn chế sự phụ thuộc giữa creator và concrete products
+    - Dễ dàng mở rộng, thêm những đoạn code mới vào chương trình mà không cần phá vỡ các đối tượng ban đầu
+    - Giúp gom các đoạn code tạo ra product vào một nơi trong chương trình, nhờ đó giúp dễ theo dõi và thao tác.
+    - Giảm khả năng gây lỗi compile, trong trường hợp chúng ta cần tạo một đối tượng mà quên khai báo lớp, chúng ta cũng có thể xử lý lỗi trong Factory và khai báo lớp cho chúng sau.
+Nhược điểm :
+    - code có thể trở nên phức tạp hơn mức bình thường do đòi hỏi phải sử dụng nhiều class mới có thể cài đặt được pattern này.
+    - Việc refactoring ( tái cấu trúc ) một class bình thường có sẵn thành một class có Factory Method có thể dẫn đến nhiều lỗi trong hệ thống, phá vỡ sự tồn tại của clients
+    - Factory method pattern lệ thuộc vào việc sử dụng private constructor nên các class không thể mở rộng và kế thừa

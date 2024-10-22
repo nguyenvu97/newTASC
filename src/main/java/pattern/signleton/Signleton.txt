@@ -1,0 +1,15 @@
+Singleton : là một mẫu thiết kế (design pattern) trong lập trình,
+được sử dụng để đảm bảo rằng một lớp chỉ có một thể hiện (instance) duy nhất trong suốt vòng đời của ứng dụng.
+Mẫu thiết kế này cung cấp một điểm truy cập toàn cục đến thể hiện duy nhất đó , giảm tài nguyền vì ko phai khởi tạo
+Mục đích :
+    +)
+    +)
+    +)
+Ưu & nhược điểm :
+    +)
+    +)
+    +)
+    +)
+nhược điểm :
+    +)
+    +)

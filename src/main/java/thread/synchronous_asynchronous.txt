@@ -1,0 +1,8 @@
+Synchronous : là lập trình đồng bộ , cac trường trình se chay tuần tự , dễ quản lý ba de bug
+ nhuược điểm : Nếu thời gian chạy các hoạt động đồng bộ xảy ra quá dài thì UI sẽ bị lock (đứng chương trình) do UI và các hoạt động đồng bộ cùng thuộc về 1 thread.
+asynchronous : là lập trình  bất đồng bộ , cho phép hoạt động ko theo tuần tự , cac thread sẽ ko phai đợi nhau ,
+ko bị đứng chương trình, tận dụng tài nguyên của hệ thống
+ nhuược điểm : Phức tạp hơn trong việc quản lý và xử lý các luồng.
+               Khó khăn hơn trong việc debug do các tác vụ có thể hoàn thành ở thời điểm không xác định.
+
+synchronized trong java : chi cho 1 thread vao duy nhat vao de xua ly cac cac luong khac phai cho doi den khi luong do xong cong viec;
