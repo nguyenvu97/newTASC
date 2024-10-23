@@ -123,6 +123,9 @@ public class User {
     }
 
     public static String updateUser(String name, String email, String phoneNumber){
+        if (phoneNumber == null || phoneNumber.isEmpty()) {
+           return "input phone number wrong";
+        }
         Map<String,User> userMap = getUser();
         if (userMap != null) {
             User user1 = userMap.get(phoneNumber);

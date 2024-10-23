@@ -2,14 +2,16 @@ Singleton : là một mẫu thiết kế (design pattern) trong lập trình,
 được sử dụng để đảm bảo rằng một lớp chỉ có một thể hiện (instance) duy nhất trong suốt vòng đời của ứng dụng.
 Mẫu thiết kế này cung cấp một điểm truy cập toàn cục đến thể hiện duy nhất đó , giảm tài nguyền vì ko phai khởi tạo
 Mục đích :
-    +)
-    +)
-    +)
+    +) Đảm bảo rằng chỉ có một instance của lớp.
+    +)Việc quản lý việc truy cập tốt hơn vì chỉ có một thể hiện duy nhất.
+    +)Có thể quản lý số lượng thể hiện của một lớp trong giớn hạn chỉ định.
 Ưu & nhược điểm :
-    +)
-    +)
-    +)
-    +)
+    +) Bằng cách chỉ tạo một instance duy nhất, Singleton giúp tiết kiệm bộ nhớ và tài nguyên.
+    +) Cho phép các thành phần trong ứng dụng dễ dàng truy cập vào instance duy nhất mà không cần phải truyền nó qua nhiều lớp.
+    +)Singleton cho phép quản lý trạng thái toàn cục dễ dàng hơn, vì tất cả các thành phần sẽ sử dụng cùng một instance.
+    +)Singleton có thể dễ dàng được thay thế hoặc mở rộng mà không ảnh hưởng đến các phần khác của ứng dụng
 nhược điểm :
-    +)
-    +)
+    +)  Singleton có thể gây khó khăn trong việc kiểm tra đơn vị (unit testing), vì nó tạo ra sự phụ thuộc chặt chẽ giữa các lớp.
+    +) rong các ứng dụng đa luồng, nếu không được triển khai đúng cách, Singleton có thể dẫn đến các vấn đề như tình trạng race condition (điều kiện đua)
+    +) Sử dụng Singleton không đúng cách có thể làm cho mã trở nên phức tạp và khó hiểu hơn, đặc biệt khi quản lý trạng thái toàn cục.
+    +) Singleton có thể hạn chế khả năng mở rộng và sử dụng lại mã, vì nó không dễ dàng thay đổi đối tượng mà nó đại diện.
