@@ -1,14 +1,14 @@
 package assignment;
 
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,18 +33,15 @@ public class User {
         return true;
     }
 
-
-
-
     public static User getInstance(String username, String email, String phoneNumber) {
-       if (user == null) {
-           synchronized (User.class) {
-               if (user == null) {
-                   user = new User(username, email, phoneNumber);
-               }
-           }
-       }
-       return user;
+        if (user == null) {
+            synchronized (User.class) {
+                if (user == null) {
+                    user = new User(username, email, phoneNumber);
+                }
+            }
+        }
+        return user;
     }
 
 
@@ -60,7 +57,7 @@ public class User {
             String json = resultStringBuilder.toString();
             Gson gson = new Gson();
             TypeToken<Map<String,User>> token = new TypeToken<>(){};
-             userMap = gson.fromJson(json, token.getType());
+            userMap = gson.fromJson(json, token.getType());
 
         }catch (IOException e){
             throw new RuntimeException(e.getMessage());
@@ -78,42 +75,69 @@ public class User {
     }
     public static void saveUsers(String name, String email, String phoneNumber) {
         if (checkNull(name, email, phoneNumber)) {
-            Map<String, User> users = new HashMap<>();
-            users = getUser();
 
-            users.put(phoneNumber, getInstance(name, email, phoneNumber));
-
-            try (FileWriter fileWriter = new FileWriter(User.fileName)) {
-                Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                String json = gson.toJson(users);
-                fileWriter.write(json);
-            } catch (IOException e) {
-                System.err.println("Error writing to user file: " + e.getMessage());
+            var users = getUser();
+            if (!users.containsKey(phoneNumber)) {
+                users.put(phoneNumber, getInstance(name, email, phoneNumber));
+                try (FileWriter fileWriter = new FileWriter(User.fileName)) {
+                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                    String json = gson.toJson(users);
+                    fileWriter.write(json);
+                } catch (IOException e) {
+                    System.err.println("Error writing to user file: " + e.getMessage());
+                }
+            } else {
+                System.out.println("số điện thoại đã bi trùng");
             }
-        } else {
-            System.out.println("Check input data: " + phoneNumber);
         }
     }
+
+    public static void write_Flies(Map<String,User>userMap){
+        try (FileWriter fileWriter = new FileWriter(User.fileName)) {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String json = gson.toJson(userMap);
+            fileWriter.write(json);
+        } catch (IOException e) {
+            System.err.println("Error writing to user file: " + e.getMessage());
+        }
+
+    }
     public static User search(String phoneNumber){
-        Map<String,User> userMap = getUser();
+        var userMap = getUser();
         if (userMap != null) {
             return userMap.get(phoneNumber);
         }
         throw  new Notfound("not data User" + phoneNumber);
     }
 
+
+
     public static String delete(String phoneNumber){
         Map<String,User> userMap = getUser();
         if (userMap != null) {
-             userMap.remove(phoneNumber);
-             return "delete Ok";
+            userMap.remove(phoneNumber);
+            write_Flies(userMap);
+            return "delete Ok";
         }
         throw  new Notfound("not data User" + phoneNumber);
     }
+
     public static String updateUser(String name, String email, String phoneNumber){
         Map<String,User> userMap = getUser();
         if (userMap != null) {
+            User user1 = userMap.get(phoneNumber);
+            if (email == null || email.isEmpty()){
+                userMap.put(phoneNumber,getInstance(name,user1.email,phoneNumber));
+                write_Flies(userMap);
+                return "update Ok";
+            }
+            if (name == null || name.isEmpty()){
+                userMap.put(phoneNumber,getInstance(user1.name,email,phoneNumber));
+                write_Flies(userMap);
+                return "update Ok";
+            }
             userMap.put(phoneNumber,getInstance(name,email,phoneNumber));
+            write_Flies(userMap);
             return "update Ok";
         }
         throw  new Notfound("not data User" + phoneNumber);
