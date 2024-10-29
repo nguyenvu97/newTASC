@@ -1,1 +1,8 @@
-
+cluester index  : la duy nhất trong 1 bảng khi muôn thay đổi cluester index  thi phai xoa di rôi mới dc tao ra , cluester index  là khóa chính khi kiếm kiêu barny search len nó nhanh, luu trên bẳng gốc
+non-cluster index : se tạo bản sao từ bản gốc và có thểm danh index ở tât cả các cột ở bản sao , và nó dc anh xa vs bảng gốc khi update hay delete add thường se tốn tai nguyên đê tai tạo lại index 
+tại sao cluester index  nhanh hon non-cluster index vi đơn giản cluester index nẳm trên bản gôc con non-cluster nằm trên bản sao  khi dung non-cluster thi nó phải tham chiếu  vs bản gôc lên nó sẽ lâu hơn
+- Có giới hạn việc đánh bao nhiêu index trong 1 table hay không ? Giải thích : thực ra thi đánh bao nhiêu index cũng dc nhưng nó ko có hiệu quả , 
+lại còn tốn tài nguyên ,
+thanh vào đó nên đánh index ở cac côt hay tim kiếm dữ liệu ít thay dổi và it trùng lặp
+Làm thế nào để biết 1 câu query đã sử dụng index hay dùng : explain select * from city; 
+dung từ khó explain de truy van có dung index hay ko nhin colum  type : nếu là index thi da dc dugn index
