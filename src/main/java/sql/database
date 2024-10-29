@@ -37,5 +37,5 @@ DENSE_RANK() over (order By Population desc) as Population_Rank
                 +) stored procedures có thể thực thi nhanh hơn so với việc gửi nhiều câu lệnh SQL riêng lẻ
                 +) Tất cả logic SQL được tập trung trong thủ tục, giúp cho việc bảo trì và quản lý trở nên đơn giản hơn.
  
-  java co 3 canh goi procedre : dung anition  @Procedure() , @Query , dung jdbc gọi lên  
+  java co 3 canh goi procedre : dung anition  @Procedure() , @Query , dung jdbc gọi lên  , NamedStoredProcedureQuery
 
